@@ -1,0 +1,27 @@
+//Created by: Marc Siwy
+//Created on: Haloween 2023
+//Output potentiometer to Serial Monitor in Arduino
+
+#include <Servo.h>;
+
+Servo realservo;
+
+void setup()  {
+  Serial.begin(9600);
+  realservo.attach(8);
+  realservo.write(0);
+  delay(1000);
+
+}
+
+void loop() {
+  if (sensorValue < 50) 
+  int sensorValue = analogRead(A0);
+  Serial.println(sensorValue);
+  delay(1);  
+  if (sensorValue > 999) 
+  realservo.write(180);
+  if (sensorValue < 1) 
+  realservo.write(0);
+
+}
