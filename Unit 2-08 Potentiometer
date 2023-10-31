@@ -1,0 +1,16 @@
+//Created by: Marc Siwy
+//Created on: Haloween 2023
+//Output potentiometer to Serial Monitor in Arduino
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int sensorValue = analogRead(A0);
+  Serial.println(sensorValue);
+  delay(1);  
+}
+
+
+                           
