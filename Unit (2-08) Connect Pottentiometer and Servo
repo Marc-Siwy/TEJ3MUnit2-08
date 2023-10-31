@@ -6,22 +6,23 @@
 
 Servo realservo;
 
+ int sensorValue;
+
 void setup()  {
   Serial.begin(9600);
   realservo.attach(8);
   realservo.write(0);
   delay(1000);
+  int sensorValue/(5.555) = ServoAngle
+  //set answer of division to angle of servo
+  
 
 }
 
-void loop() {
-  if (sensorValue < 50) 
+ void loop() {
   int sensorValue = analogRead(A0);
   Serial.println(sensorValue);
   delay(1);  
-  if (sensorValue > 999) 
-  realservo.write(180);
-  if (sensorValue < 1) 
-  realservo.write(0);
-
+  realservo.write(ServoAngle);
+ 
 }
