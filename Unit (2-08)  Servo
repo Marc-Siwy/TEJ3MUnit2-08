@@ -1,0 +1,18 @@
+#include <Servo.h>;
+
+Servo realservo;
+
+void setup()  {
+  realservo.attach(8);
+  realservo.write(0);
+  delay(1000);
+
+}
+
+void loop() {
+  realservo.write(180);
+  delay(1000);
+  realservo.write(0);
+  delay(1000);
+
+}
