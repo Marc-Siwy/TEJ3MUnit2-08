@@ -4,24 +4,27 @@
 
 #include <Servo.h>;
 
-Servo realservo;
-
- int sensorValue;
+Servo realServo;
+int sensorValue;
 
 void setup()  {
   Serial.begin(9600);
-  realservo.attach(8);
-  realservo.write(0);
-  delay(1000);
-  
-
+  realServo.attach(8);
+  realServo.write(0);
 }
 
  void loop() {
+
+  //constants
+  const double diffValue = 1023 / 180; // Divides the max value that can be read from the potentiometer and the max angle that we want, 
+                                       //to get the constant value in the next equation, which divides a certain ohm reading and the constant itself 
+                                       //to find the angle that we want to put the servo at.
+
+  //variables 
   int sensorValue = analogRead(A0);
-  int angle = sensorValue / 5.6;
+  int angle = sensorValue / diffValue;
+  
   Serial.println(sensorValue);
-  delay(1);  
-  realservo.write(angle);
- 
+  delay(10);  
+  realServo.write(angle);
 }
